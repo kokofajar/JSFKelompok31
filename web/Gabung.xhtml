@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>JSF RSBK</title>
+        <h:outputStylesheet library = "css" name = "styles.css"  /> 	
+    </h:head>
+    <h:body>
+        
+        <center>
+            <h2>Daftar Mahasiswa</h2>
+            <h:form>
+            <h:dataTable value="#{gabung.get_all_gabung}" var="gab" width="800px"
+            styleClass = "employeeTable"
+            headerClass = "employeeTableHeader"
+            rowClasses = "employeeTableOddRow,employeeTableEvenRow">
+                
+                <h:column>
+                  <f:facet name="header">ID</f:facet>
+                  <h:outputText value="#{gab.ID_DETAIL}"></h:outputText>
+                </h:column>
+                <h:column>
+                  <f:facet name="header">NAMA</f:facet>
+                  <h:outputText value="#{gab.NAMA}"></h:outputText>
+                </h:column>
+                <h:column>
+                  <f:facet name="header">PUBLISHER</f:facet>
+                  <h:outputText value="#{gab.PUBLISHER}"></h:outputText>
+                </h:column>
+                <h:column>
+                  <f:facet name="header">KATEGORI</f:facet>
+                 <h:outputText value="#{gab.KATEGORI}"></h:outputText>
+                </h:column>
+                <h:column>
+                  <f:facet name="header">KETERANGAN</f:facet>
+                 <h:outputText value="#{gab.KETERANGAN}"></h:outputText>
+                </h:column>
+              
+            </h:dataTable>
+            <br></br>
+            </h:form>
+            
+             <h:form>
+                <h:form>
+                Lihat Data Detail &nbsp;
+                <h:commandButton value="Lihat and edit Game" action="index.xhtml"></h:commandButton>
+                </h:form>
+                </h:form>
+        </center>
+    </h:body>
+</html>
+

@@ -1,0 +1,21 @@
+.employeeTable {   
+   border-collapse:collapse;
+   border:1px solid #000000;
+}
+
+.employeeTableHeader {
+   text-align:center;
+   background:none repeat scroll 0 0 #f7ef0c;
+   border-bottom:1px solid #000000;  
+   padding:2px;
+}
+
+.employeeTableOddRow {
+   text-align:center;
+   background:none repeat scroll 0 0 #eafafc;	
+}
+
+.employeeTableEvenRow {
+   text-align:center;
+   background:none repeat scroll 0 0 #f9f33e;
+}

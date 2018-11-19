@@ -1,0 +1,71 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>JSF RSBK</title>
+        <h:outputStylesheet library = "css" name = "styles.css"  /> 	
+        
+    </h:head>
+    <h:body>
+        
+        <center>
+            <h2>Daftar Game</h2>
+             <h:column>
+                  <f:facet name="header">Id</f:facet>
+                  <h:outputText value="#{maha.ID_DETAIL}"></h:outputText>
+                </h:column>            
+            <h:form>
+            <h:dataTable value="#{mahasiswa.get_all_mahasiswa}" var="maha" width="800px"
+            styleClass = "employeeTable"
+            headerClass = "employeeTableHeader"
+            rowClasses = "employeeTableOddRow,employeeTableEvenRow">
+                <h:outputText value="#{mahasiswa.NAMA}"/>
+                <h:column>
+                  <f:facet name="header">ID</f:facet>
+                  <h:outputText value="#{maha.ID_DETAIL}"></h:outputText>
+                </h:column>
+                <h:column>
+                  <f:facet name="header">NAMA</f:facet>
+                 <h:outputText value="#{maha.NAMA}"></h:outputText>
+                </h:column>
+                <h:column>
+                  <f:facet name="header">PUBLISHER</f:facet>
+                 <h:outputText value="#{maha.PUBLISHER}"></h:outputText>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Edit</f:facet>
+                    <h:commandButton value="Edit" action="#{mahasiswa.Edit_Mahasiswa}">
+                      <f:param name="action" value="#{maha.ID_DETAIL}" />
+                    </h:commandButton>
+                  </h:column>
+                  <h:column>
+                    <f:facet name="header">Delete</f:facet>
+                    <h:commandButton value="Delete" action="#{mahasiswa.Delete_Mahasiswa}">
+                      <f:param name="action" value="#{maha.ID_DETAIL}" />
+                    </h:commandButton>
+                  </h:column>
+            </h:dataTable>
+            <br></br>
+            </h:form>        
+            
+                 <h:form>
+                 <h:form>
+                Tambahkan Data Game &nbsp;
+                <h:commandButton value="Tambahkan" action="Tambah.xhtml"></h:commandButton>
+                </h:form>
+                </h:form>
+            
+                              
+                <h:form>
+                <h:form>
+                Lihat Data Detail &nbsp;
+                <h:commandButton value="Lihat Detail" action="Gabung.xhtml"></h:commandButton>
+                </h:form>
+                </h:form>
+
+
+        </center>
+    </h:body>
+</html>
